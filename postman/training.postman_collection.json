@@ -1,0 +1,235 @@
+{
+	"info": {
+		"name": "Docker training",
+		"_postman_id": "4e0b7117-6e4a-5db5-fa37-9b3e594ec962",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send email success 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "kamil.bielarczyk@intive.com"
+					},
+					{
+						"key": "topic",
+						"value": "test topic"
+					},
+					{
+						"key": "message",
+						"value": "test message"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Missing email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "kamil.bielarczyk@intive.com",
+						"disabled": true
+					},
+					{
+						"key": "topic",
+						"value": "test topic"
+					},
+					{
+						"key": "message",
+						"value": "test message"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Missing message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "kamil.bielarczyk@intive.com"
+					},
+					{
+						"key": "topic",
+						"value": "test topic"
+					},
+					{
+						"key": "message",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Missing topic",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "kamil.bielarczyk@intive.com"
+					},
+					{
+						"key": "message",
+						"value": "test message"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Missing topic&message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "kamil.bielarczyk@intive.com"
+					},
+					{
+						"key": "message",
+						"value": "test message",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
