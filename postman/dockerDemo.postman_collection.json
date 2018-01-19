@@ -1,0 +1,198 @@
+{
+	"id": "facaaa81-0a75-04f4-ff82-6b858aa7b7dd",
+	"name": "dockerDemo",
+	"description": "",
+	"order": [
+		"2a4e7d18-2e6e-ddd9-9629-41631bf2cf4e",
+		"e9b80426-4deb-6646-9c35-0be7e6e1d15b",
+		"018ccc7e-98a5-e845-d6d5-edf22aadcd45",
+		"47a0c861-441d-3585-b3db-cd521c8fac56",
+		"3a1186c9-5695-9dc0-a72f-cce92421766d",
+		"313a5772-a070-f72c-076c-7143f16c91e6"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1516365494480,
+	"owner": "2607164",
+	"public": false,
+	"requests": [
+		{
+			"id": "018ccc7e-98a5-e845-d6d5-edf22aadcd45",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://192.168.1.252:8080/api/mail",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "pm.test(\"response is 400\", function() {\n    pm.response.to.have.status(400)\n})",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1516366887478,
+			"name": "url://mail - bad request",
+			"description": "",
+			"collectionId": "facaaa81-0a75-04f4-ff82-6b858aa7b7dd",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"test@wp.pl\",\n\t\"topic\": \"Broken json\n}"
+		},
+		{
+			"id": "2a4e7d18-2e6e-ddd9-9629-41631bf2cf4e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://192.168.1.252:8080/api/mail",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "pm.test(\"response is 200\", function() {\n    pm.response.to.have.status(200)\n})",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1516366893165,
+			"name": "url://mail",
+			"description": "",
+			"collectionId": "facaaa81-0a75-04f4-ff82-6b858aa7b7dd",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"test@wp.pl\",\n\t\"topic\": \"Test mail\",\n\t\"message\": \"Lorem ipsum\"\n}"
+		},
+		{
+			"id": "313a5772-a070-f72c-076c-7143f16c91e6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://192.168.1.252:8080/api/mail",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "pm.test(\"response is 400\", function() {\n    pm.response.to.have.status(400)\n})",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1516367626288,
+			"name": "url:/mail - no email",
+			"description": "",
+			"collectionId": "facaaa81-0a75-04f4-ff82-6b858aa7b7dd",
+			"responses": [],
+			"rawModeData": "{\n\t\"topic\": \"test topic\",\n\t\"message\": \"test message\"\n}"
+		},
+		{
+			"id": "3a1186c9-5695-9dc0-a72f-cce92421766d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://192.168.1.252:8080/api/mail",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "pm.test(\"response is 400\", function() {\n    pm.response.to.have.status(400)\n})",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1516367563449,
+			"name": "url:/mail - no email",
+			"description": "",
+			"collectionId": "facaaa81-0a75-04f4-ff82-6b858aa7b7dd",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"test@wp.pl\",\n\t\"message\": \"test message\"\n}"
+		},
+		{
+			"id": "47a0c861-441d-3585-b3db-cd521c8fac56",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://192.168.1.252:8080/api/mail",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "pm.test(\"response is 400\", function() {\n    pm.response.to.have.status(200);\n})",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1516368458280,
+			"name": "url:/mail - no topic",
+			"description": "",
+			"collectionId": "facaaa81-0a75-04f4-ff82-6b858aa7b7dd",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"test@wp.pl\",\n\t\"topic\": \"Broken json\"\n}"
+		},
+		{
+			"id": "e9b80426-4deb-6646-9c35-0be7e6e1d15b",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://192.168.1.252:8080/api/mail43242342",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "pm.test(\"response is 404\", function() {\n    pm.response.to.have.status(404)\n})",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1516366891424,
+			"name": "url://mail - not found",
+			"description": "",
+			"collectionId": "facaaa81-0a75-04f4-ff82-6b858aa7b7dd",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"test@wp.pl\",\n\t\"topic\": \"Broken json\",\n\t\"message\": \"test message\"\n}"
+		}
+	]
+}
