@@ -1,0 +1,274 @@
+{
+	"info": {
+		"name": "Docker training",
+		"_postman_id": "b97f38fb-2ca1-a490-ab57-5aa32cc3f64b",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send email success 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7ef2928-7091-4907-8883-9ea8077c5f1c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "anna.luda@intive.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "topic",
+							"value": "test message",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "test test test",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "07cc6b0c-9555-4855-a34b-9a07da7c9a7b",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"status code is 400\"] = responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "topic",
+							"value": "test 2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "message 3",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c24f292-b473-43df-985b-17e09953dae6",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "anna.luda@intive.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "topic",
+							"value": "test 3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing topic",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "def7523e-cb34-435d-b767-83bd0a3f0571",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"status code is 400\"] = responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "anna.luda@intive.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "topic",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "test nr 4",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing topic&message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "19ed002d-3f5c-4aaa-a1d4-e52d6181827a",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"status code is 400\"] = responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "anna.luda@intive.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "topic",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/api/mail",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"mail"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
