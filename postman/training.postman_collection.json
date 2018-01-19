@@ -1,8 +1,7 @@
 {
 	"info": {
 		"name": "Docker training",
-		"_postman_id": "4e0b7117-6e4a-5db5-fa37-9b3e594ec962",
-		"description": "",
+		"_postman_id": "b97f38fb-2ca1-a490-ab57-5aa32cc3f64b",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -12,43 +11,41 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "e7ef2928-7091-4907-8883-9ea8077c5f1c",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
+							"tests[\"status code is 200\"] = responseCode.code === 200;"
 						]
 					}
 				}
 			],
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
-						"key": "email",
-						"value": "kamil.bielarczyk@intive.com"
-					},
-					{
-						"key": "topic",
-						"value": "test topic"
-					},
-					{
-						"key": "message",
-						"value": "test message"
+						"key": "Content-Type",
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"anna.luda@intive.com\",\n\t\"topic\": \"topic\",\n\t\"message\": \"message\"\n}"
+				},
 				"url": {
-					"raw": "localhost/api/mail",
+					"raw": "http://192.168.1.252:8080/api/mail",
+					"protocol": "http",
 					"host": [
-						"localhost"
+						"192",
+						"168",
+						"1",
+						"252"
 					],
+					"port": "8080",
 					"path": [
 						"api",
 						"mail"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -58,44 +55,41 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "07cc6b0c-9555-4855-a34b-9a07da7c9a7b",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(400);",
-							"});"
+							"tests[\"status code is 400\"] = responseCode.code === 400;"
 						]
 					}
 				}
 			],
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
-						"key": "email",
-						"value": "kamil.bielarczyk@intive.com",
-						"disabled": true
-					},
-					{
-						"key": "topic",
-						"value": "test topic"
-					},
-					{
-						"key": "message",
-						"value": "test message"
+						"key": "Content-Type",
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": null,\n\t\"topic\": \"topic\",\n\t\"message\": \"message\"\n}"
+				},
 				"url": {
-					"raw": "localhost/api/mail",
+					"raw": "http://192.168.1.252:8080/api/mail",
+					"protocol": "http",
 					"host": [
-						"localhost"
+						"192",
+						"168",
+						"1",
+						"252"
 					],
+					"port": "8080",
 					"path": [
 						"api",
 						"mail"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -105,44 +99,41 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "0c24f292-b473-43df-985b-17e09953dae6",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(400);",
-							"});"
+							"tests[\"status code is 200\"] = responseCode.code === 200;"
 						]
 					}
 				}
 			],
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
-						"key": "email",
-						"value": "kamil.bielarczyk@intive.com"
-					},
-					{
-						"key": "topic",
-						"value": "test topic"
-					},
-					{
-						"key": "message",
-						"value": "",
-						"disabled": true
+						"key": "Content-Type",
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"anna.luda@intive.com\",\n\t\"topic\": \"topic\",\n\t\"message\": null\n}"
+				},
 				"url": {
-					"raw": "localhost/api/mail",
+					"raw": "http://192.168.1.252:8080/api/mail",
+					"protocol": "http",
 					"host": [
-						"localhost"
+						"192",
+						"168",
+						"1",
+						"252"
 					],
+					"port": "8080",
 					"path": [
 						"api",
 						"mail"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -152,39 +143,41 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "def7523e-cb34-435d-b767-83bd0a3f0571",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(400);",
-							"});"
+							"tests[\"status code is 400\"] = responseCode.code === 400;"
 						]
 					}
 				}
 			],
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
-						"key": "email",
-						"value": "kamil.bielarczyk@intive.com"
-					},
-					{
-						"key": "message",
-						"value": "test message"
+						"key": "Content-Type",
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"anna.luda@intive.com\",\n\t\"topic\": null\n\t\"message\": \"message\"\n}"
+				},
 				"url": {
-					"raw": "localhost/api/mail",
+					"raw": "http://192.168.1.252:8080/api/mail",
+					"protocol": "http",
 					"host": [
-						"localhost"
+						"192",
+						"168",
+						"1",
+						"252"
 					],
+					"port": "8080",
 					"path": [
 						"api",
 						"mail"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -194,40 +187,41 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "19ed002d-3f5c-4aaa-a1d4-e52d6181827a",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(400);",
-							"});"
+							"tests[\"status code is 400\"] = responseCode.code === 400;"
 						]
 					}
 				}
 			],
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
-						"key": "email",
-						"value": "kamil.bielarczyk@intive.com"
-					},
-					{
-						"key": "message",
-						"value": "test message",
-						"disabled": true
+						"key": "Content-Type",
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"anna.luda@intive.com\",\n\t\"topic\": null,\n\t\"message\": null,\n}"
+				},
 				"url": {
-					"raw": "localhost/api/mail",
+					"raw": "http://192.168.1.252:8080/api/mail",
+					"protocol": "http",
 					"host": [
-						"localhost"
+						"192",
+						"168",
+						"1",
+						"252"
 					],
+					"port": "8080",
 					"path": [
 						"api",
 						"mail"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		}
